@@ -4,6 +4,11 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 COPY . .
+# API gateway URL is inlined into the JS bundle by Vite at build time.
+# Override via --build-arg VITE_API_BASE_URL=http://<host>:8080 (or via
+# docker-compose's build.args). Defaults to localhost for dev.
+ARG VITE_API_BASE_URL=http://localhost:8080
+ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 RUN npm run build
 
 # Stage 2 — serve
