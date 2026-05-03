@@ -1,0 +1,17 @@
+export const colors = {
+  primary: '#2563eb',
+  primaryDark: '#1d4ed8',
+  primaryLight: '#3b82f6',
+  background: '#f8fafc',
+  foreground: '#1e293b',
+  card: '#ffffff',
+  border: '#e2e8f0',
+  muted: '#f1f5f9',
+  mutedForeground: '#64748b',
+  red600: '#dc2626',
+  green600: '#16a34a',
+  amber500: '#f59e0b',
+  slate400: '#94a3b8',
+  slate500: '#64748b',
+  white: '#ffffff',
+} as const;
