@@ -2,5 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    /* Light mode — slate-based palette, matches the original look. */
+    --color-background: 248 250 252;          /* slate-50  */
+    --color-foreground: 30 41 59;              /* slate-800 */
+    --color-card: 255 255 255;
+    --color-card-foreground: 30 41 59;
+    --color-border: 226 232 240;               /* slate-200 */
+    --color-muted: 241 245 249;                /* slate-100 */
+    --color-muted-foreground: 100 116 139;     /* slate-500 */
+  }
+
+  .dark {
+    /* Dark mode — slightly higher contrast than slate-900 black-on-black. */
+    --color-background: 15 23 42;              /* slate-900 */
+    --color-foreground: 226 232 240;           /* slate-200 */
+    --color-card: 30 41 59;                    /* slate-800 */
+    --color-card-foreground: 241 245 249;      /* slate-100 */
+    --color-border: 51 65 85;                  /* slate-700 */
+    --color-muted: 51 65 85;                   /* slate-700 */
+    --color-muted-foreground: 148 163 184;     /* slate-400 */
+  }
+}
+
 html, body, #root { height: 100%; }
-body { background-color: theme('colors.background'); color: theme('colors.foreground'); }
+
+body {
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  transition: background-color 0.15s ease, color 0.15s ease;
+}

@@ -39,8 +39,8 @@ export function Sidebar() {
               [
                 'flex items-center gap-3 px-5 py-2.5 text-sm transition-colors',
                 isActive
-                  ? 'bg-blue-50 text-primary border-r-2 border-primary font-medium'
-                  : 'text-slate-700 hover:bg-muted',
+                  ? 'bg-blue-50 dark:bg-primary/15 text-primary border-r-2 border-primary font-medium'
+                  : 'text-slate-700 dark:text-slate-300 hover:bg-muted',
               ].join(' ')
             }
           >

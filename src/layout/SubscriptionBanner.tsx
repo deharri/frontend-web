@@ -24,8 +24,8 @@ export function SubscriptionBanner() {
 
   if (!agency.subscriptionActive) {
     return (
-      <div className="bg-red-50 border-b border-red-600/20 px-6 py-2.5 flex items-center justify-between">
-        <div className="flex items-center gap-2 text-sm text-red-700">
+      <div className="bg-red-50 dark:bg-red-600/15 border-b border-red-600/20 px-6 py-2.5 flex items-center justify-between">
+        <div className="flex items-center gap-2 text-sm text-red-700 dark:text-red-300">
           <AlertCircle size={16} />
           <span>Subscription expired. Renew to invite workers and place bids.</span>
         </div>
@@ -44,8 +44,8 @@ export function SubscriptionBanner() {
     const days = differenceInCalendarDays(new Date(agency.subscriptionExpiresAt), new Date());
     if (days <= 7 && days >= 0) {
       return (
-        <div className="bg-amber-100 border-b border-amber-500/30 px-6 py-2.5 flex items-center justify-between">
-          <div className="flex items-center gap-2 text-sm text-amber-500">
+        <div className="bg-amber-100 dark:bg-amber-500/15 border-b border-amber-500/30 px-6 py-2.5 flex items-center justify-between">
+          <div className="flex items-center gap-2 text-sm text-amber-500 dark:text-amber-400">
             <AlertTriangle size={16} />
             <span>
               Subscription expires in {days} day{days === 1 ? '' : 's'} — renew now to avoid disruption.
